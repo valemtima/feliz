@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Mes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #2d2c2c, #000000);
+      text-align: center;
+      color: #ffffff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Corazones flotando */
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-120vh) scale(1.6); opacity: 0; }
+    }
+
+    /* Carta desplegable */
+    .carta-container {
+      width: 80%;
+      max-width: 600px;
+      margin: 40px auto;
+      perspective: 1000px;
+    }
+
+    .carta {
+      background: rgba(30, 30, 30, 0.6);
+      backdrop-filter: blur(6px);
+      border-radius: 20px;
+      padding: 0;
+      transform-style: preserve-3d;
+      transform: rotateX(-90deg);
+      animation: abrirCarta 1.5s forwards;
+    }
+
+    @keyframes abrirCarta {
+      0% { transform: rotateX(-90deg); opacity: 0; }
+      100% { transform: rotateX(0); opacity: 1; }
+    }
+
+    .carta-contenido {
+      padding: 30px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding-bottom: 40px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FELIZ 2° MES, MI NIÑA LINDA  ❤️‍🔥</h1>
+    <h2>Deseo mi vida junto a ti </h2>
+  </header>
+
+  <!-- Carta animada -->
+  <div class="carta-container">
+    <div class="carta">
+      <div class="carta-contenido">
+        <p>
+         Verónica, amor mío…
+No tienes idea de la felicidad tan inmensa que me haces sentir. Desde que llegaste a mi vida, todo cambió para bien: mis días son más ligeros, mis pensamientos más bonitos y mi corazón más lleno. Nunca antes alguien me había hecho tan feliz como tú lo haces, y no hay un solo momento en el que no agradezca por tenerte.
+
+Quiero que lo sepas hoy y siempre: mi amor por ti no tiene final. Es infinito, sincero y profundo. Eres la persona con la que quiero caminar toda mi vida, la que quiero a mi lado en cada risa, cada sueño y cada paso que demos. No imagino un futuro donde no estés tú, porque mi vida eres tú.
+ 
+        </p>
+        <p>
+         
+Te amo con una fuerza que no sabía que existía, y cada día que pasa te amo un poco más. Gracias por ser tú… por ser mi paz, mi alegría y mi mundo.
+Siempre tú, siempre nosotros. ❤️‍🔥
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Hecho con mucho amor para ti ❤️‍🔥
+  </div>
+
+  <!-- Generador de corazones flotando -->
+  <script>
+    function crearCorazon() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '💗';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (20 + Math.random() * 25) + 'px';
+      heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+
+    setInterval(crearCorazon, 600);
+  </script>
+</body>
+</html>
